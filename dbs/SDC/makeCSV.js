@@ -8,7 +8,7 @@ const csvWriter = createCsvWriter({
     { id: 'recDetails', title: 'RecDetails' },
     { id: 'recTitle', title: 'RecTitle' },
     { id: 'recCost', title: 'RecCost' },
-    { id: 'recRating', title: 'RecRating' },
+    { id: 'recRating', title: 'RecRating' }, 
     { id: 'recRatingCount', title: 'RecRatingCount' },
     { id: 'roomId', title: 'RoomId' }
   ]
@@ -50,7 +50,7 @@ let recSeeder = () => {
 
 let batches = 0;
 let append = () => {
-  if (batches < 1000) {
+  if (batches < 5000) {
     batches += 1;
     let data = recSeeder();
     csvWriter.writeRecords(data).then(() => append());
